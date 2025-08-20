@@ -27,13 +27,13 @@ public class Practica1 {
                 break;
 
                 case 2:
-                    System.out.println("Introduce el número que quieres calcular su factorial\n> ");
+                    System.out.print("Introduce el número que quieres calcular su factorial\n> ");
                     dato=user.nextInt(); 
                     System.out.println("El factorial de "+dato+ " es "+ factorial(dato));
                 break;
                     //Aquí no hay nada que comentar, solo que ya me dió hambre
                 case 3:
-                    System.out.println("Introduce el número para la conjetura de Collatz\n> ");
+                    System.out.print("Introduce el número para la conjetura de Collatz\n> ");
                     dato=user.nextInt();
                     System.out.println("La conjetura de Collatz con "+dato+" llega a "+ collatz(dato));
                 break;
@@ -59,7 +59,12 @@ public class Practica1 {
     public static int collatz(int n) {   
         //Este lo hice de puro mamón porque el profe dijo "Sorprendeme"
         //No sé si debe solo de llegar a la conjetura o darte cuantos pasos, pero allá se vé
-        System.out.print(n + " ");
-        return n==1?({System.out.println(); 1}):(n%2==0?collatz(n/2):collatz(3*n+1));
+        if(n == 1) {
+            System.out.println(n);
+            return n;
+        } else {
+            System.out.print(n + " ");
+            return n%2==0?collatz(n/2):collatz(3*n+1);
+        }
     }
 }
