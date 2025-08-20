@@ -67,6 +67,7 @@ public class Practica1{
     public static int collatz(int n)
     {   
         //Este lo hice de puro mamón porque el profe dijo "Sorprendeme"
+        //No sé si debe solo de llegar a la conjetura o darte cuantos pasos, pero allá se vé
         return n==1?1:(n%2==0?collatz(n/2):collatz(3*n+1));
     }
 }
